@@ -1,0 +1,341 @@
+/* Genel Stil */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000; /* Arka plan siyah */
+    color: white; /* Yazılar beyaz */
+    margin: 0;
+    padding: 0;
+    background-image: url('27770-365891067_tiny.jpg'); /* Arkaplan resmi */
+    background-size: cover; /* Sayfanın tamamını kaplasın */
+    background-position: center; /* Ortalanmış görünsün */
+    background-attachment: fixed; /* Kaydırıldığında sabit kalsın */
+    background-repeat: no-repeat;
+}
+
+/* Kartvizit Kutusu */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #111; /* Hafif koyu gri arka plan */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Dil Değiştirme Butonu */
+.top-button {
+    background: #0073b1;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block; /* Tek başına üstte olsun */
+    font-size: 16px;
+}
+
+.top-button:hover {
+    background: #005582;
+}
+
+/* Profil Fotoğrafı */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 3px solid white;
+}
+
+/* Özgeçmiş Metni */
+.bio {
+    font-size: 18px;
+    margin: 10px 20px;
+    color: #ddd;
+}
+
+/* Linklerin Stili */
+.links a {
+    display: block;
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Sürgülü Buton (Switch) */
+/*.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin: 20px auto;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: \"\";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #0073b1;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+*/
+/* Dil Değiştirme Butonu Konteyneri */
+.language-switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Sürgülü Buton (Switch) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0073b1;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Kaydırılınca mavi olacak */
+input:checked + .slider {
+    background-color: red;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* LinkedIn Butonu */
+.linkedin {
+    background-color: #0073b1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+}
+
+.linkedin:hover {
+    background-color: #005582;
+}
+
+/* GitHub Butonu */
+.github {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+}
+
+.github:hover {
+    background-color: #222;
+}
+
+/* E-Posta Linki */
+.email {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.email:hover {
+    text-decoration: underline;
+}
+
+/* Link Butonları İçin Ortalamayı ve Simgeyi Düzelt */
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* LinkedIn ve GitHub Butonları İçin */
+.linkedin, .github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 220px; /* Buton genişliği */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* GitHub Rengi */
+.github {
+    background-color: #333;
+    color: white;
+}
+
+.github:hover {
+    background-color: #222;
+}
+
+
+/* İkon ve Yazının Yan Yana Olmasını Sağla */
+.linkedin img,
+.github img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* CV ve E-Posta Butonları İçin Ortak Stil */
+.cv-button, .email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 220px; /* Buton genişliği */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* CV Butonu (Yeşil) */
+.cv-button {
+    background-color: #4CAF50;
+}
+
+.cv-button:hover {
+    background-color: #388E3C;
+}
+
+/* E-Posta Butonu (Gmail Teması) */
+.email {
+    background: linear-gradient(to right, white, #FBBC05, #EA4335, #FBBC05, white);
+    border: 2px solid white;
+}
+
+.email:hover {
+    opacity: 0.8;
+}
+
+/* Küçük İkonlar */
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+
+/* Daha Fazla Bilgi Butonu */
+.more-info-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.more-info-button:hover {
+    text-decoration: underline;
+}
+
+/* Daha Fazla Bilgi Bölümü */
+.more-info {
+    margin-top: 15px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: none;
+}
+
+
+
+

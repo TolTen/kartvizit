@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartvizit Sitesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="language-switch-container">
+            <span>English</span>
+            <label class="switch">
+                <input type="checkbox" id="language-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span>Türkçe</span>
+        </div>
+        <img src="ben1.JPG" alt="Profil Fotoğrafı" class="profile-pic">
+        <h1 id="name">Tolga Gümüşten</h1>
+        <p id="bio">Merhaba! <br><br>
+            Siteme hoş geldiniz, ben Tolga. Hayatım boyunca hep kendimi geliştirmek ve tecrübe edinmeyi ön plana koydum. 
+            Bu konuda da hala çalışmalarım, sertifika programlarına katılımım ve seminerlere katılımım devam ediyor.
+        </p><br>
+
+        <button class="more-info-button" id="more-info-button" onclick="toggleMoreInfo()">
+            <span id="toggle-icon">▶</span> Hakkımda Daha Fazla
+        </button>
+        <div id="more-info" class="more-info" style="display: none;">
+            <p>Hakkımda daha fazla ve daha detaylı bilgileri buradan görebilirsiniz ve okuyabilirsiniz.</p>
+        </div><br>
+
+        <div class="links">
+            <a href="https://www.linkedin.com/in/tolga-g%C3%BCm%C3%BC%C5%9Ften-640b2a224/" target="_blank" class="linkedin">
+                <img src="linkedin.svg" alt="LinkedIn" class="icon"> LinkedIn
+            </a>
+            <a href="https://github.com/TolTen" target="_blank" class="github">
+                <img src="github.svg" alt="GitHub" class="icon"> GitHub
+            </a>
+            <a href="#" onclick="showCV()" class="cv-button">
+                <img src="generic-blog.svg" alt="CV" class="icon"> CV
+            </a>
+            <a href="mailto:tolga.gumusten@ozu.edu.tr" class="email">
+                <img src="32px-Gmail_icon_(2020).svg.png" alt="Gmail" class="icon"> E-Mail
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function showCV() {
+            let cvWindow = window.open("Tolga Gümüşten - CV.pdf", "_blank");
+        }
+
+        function toggleMoreInfo() {
+            let infoSection = document.getElementById("more-info");
+            let toggleIcon = document.getElementById("toggle-icon");
+            if (infoSection.style.display === "none" || infoSection.style.display === "") {
+                infoSection.style.display = "block";
+                toggleIcon.textContent = "▼";
+            } else {
+                infoSection.style.display = "none";
+                toggleIcon.textContent = "▶";
+            }   
+        }
+
+        document.addEventListener("DOMContentLoaded", function () { 
+    let languageToggle = document.getElementById("language-toggle");
+
+    // Sayfa açıldığında Türkçe olarak başlat (slider sağda olmalı)
+    languageToggle.checked = true; 
+    toggleLanguage(); 
+
+    languageToggle.addEventListener("change", toggleLanguage);
+});
+
+function toggleLanguage() {
+    let isChecked = document.getElementById("language-toggle").checked;
+    
+    let nameElement = document.getElementById("name");
+    let bioElement = document.getElementById("bio");
+    let moreInfoButton = document.getElementById("more-info-button");
+    let moreInfoText = document.getElementById("more-info");
+
+    if (!nameElement || !bioElement || !moreInfoButton || !moreInfoText) {
+        console.error("Bir öğe bulunamadı! ID’leri tekrar kontrol edin.");
+        return;
+    }
+
+    // Eğer checkbox işaretliyse (sağda, Türkçe), Türkçe göster
+    // Checkbox işaretli değilse (solda, İngilizce), İngilizce göster
+    if (isChecked) {
+        nameElement.textContent = "Tolga Gümüşten";
+        bioElement.innerHTML = "Merhaba!<br><br> Siteme hoş geldiniz, ben Tolga. Hayatım boyunca hep kendimi geliştirmek ve tecrübe edinmeyi ön plana koydum. <br><br> Bu konuda da hala çalışmalarım, sertifika programlarına katılımım ve seminerlere katılımım devam ediyor.";
+        moreInfoButton.innerHTML = "▶ Hakkımda Daha Fazla";
+        moreInfoText.innerHTML = "Hakkımda daha fazla ve daha detaylı bilgileri buradan görebilirsiniz ve okuyabilirsiniz.";
+    } else {
+        nameElement.textContent = "Tolga Gümüşten";
+        bioElement.innerHTML = "Hello!<br><br> Welcome to my site, I'm Tolga. Throughout my life, I have always prioritized improving myself and gaining experience. <br><br> I am still continuing my work in this regard, participating in certification programs and attending seminars.";
+        moreInfoButton.innerHTML = "▶ More About Me";
+        moreInfoText.innerHTML = "You can find more and detailed information about me here.";
+    }
+}
+
+    </script>
+</body>
+</html>
