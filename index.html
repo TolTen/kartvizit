@@ -66,7 +66,6 @@
         document.addEventListener("DOMContentLoaded", function () { 
     let languageToggle = document.getElementById("language-toggle");
 
-    // Sayfa açıldığında Türkçe olarak başlat (slider sağda olmalı)
     languageToggle.checked = true; 
     toggleLanguage(); 
 
@@ -86,16 +85,14 @@ function toggleLanguage() {
         return;
     }
 
-    // Eğer checkbox işaretliyse (sağda, Türkçe), Türkçe göster
-    // Checkbox işaretli değilse (solda, İngilizce), İngilizce göster
     if (isChecked) {
         nameElement.textContent = "Tolga Gümüşten";
-        bioElement.innerHTML = "Merhaba!<br><br> Siteme hoş geldiniz, ben Tolga. Hayatım boyunca hep kendimi geliştirmek ve tecrübe edinmeyi ön plana koydum. <br><br> Bu konuda da hala çalışmalarım, sertifika programlarına katılımım ve seminerlere katılımım devam ediyor.";
+        bioElement.innerHTML = "Merhaba!<br><br> Siteme hoş geldiniz, ben Tolga. Hayatım boyunca hep kendimi geliştirmek ve tecrübe edinmeyi ön plana koydum. <br><br> Kendi sınırlarımı zorlamaktan ve yeni beceriler kazanarak değer üretmekten keyif alıyorum. Sürekli öğrenme ve gelişime odaklanarak, iş dünyasında fark yaratmayı hedefliyorum.";
         moreInfoButton.innerHTML = "▶ Hakkımda Daha Fazla";
         moreInfoText.innerHTML = "Hakkımda daha fazla ve daha detaylı bilgileri buradan görebilirsiniz ve okuyabilirsiniz.";
     } else {
         nameElement.textContent = "Tolga Gümüşten";
-        bioElement.innerHTML = "Hello!<br><br> Welcome to my site, I'm Tolga. Throughout my life, I have always prioritized improving myself and gaining experience. <br><br> I am still continuing my work in this regard, participating in certification programs and attending seminars.";
+        bioElement.innerHTML = "Hello!<br><br> Welcome to my site, I'm Tolga. Throughout my life, I have always prioritized improving myself and gaining experience. <br><br> I enjoy pushing my limits and acquiring new skills to create value. By focusing on continuous learning and development, I aim to make a difference in the business world.";
         moreInfoButton.innerHTML = "▶ More About Me";
         moreInfoText.innerHTML = "You can find more and detailed information about me here.";
     }
