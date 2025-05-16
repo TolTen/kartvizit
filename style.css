@@ -3,14 +3,14 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #000; /* Arka plan siyah */
-    color: white; /* Yazılar beyaz */
+    background-color: #000; 
+    color: white; 
     margin: 0;
     padding: 0;
-    background-image: url('27770-365891067_tiny.jpg'); /* Arkaplan resmi */
-    background-size: cover; /* Sayfanın tamamını kaplasın */
-    background-position: center; /* Ortalanmış görünsün */
-    background-attachment: fixed; /* Kaydırıldığında sabit kalsın */
+    background-image: url('27770-365891067_tiny.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
     background-repeat: no-repeat;
 }
 
@@ -18,7 +18,7 @@ body {
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background: #111; /* Hafif koyu gri arka plan */
+    background: #111; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
@@ -33,7 +33,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin: 20px auto;
-    display: block; /* Tek başına üstte olsun */
+    display: block; 
     font-size: 16px;
 }
 
@@ -221,7 +221,7 @@ input:checked + .slider:before {
     text-decoration: underline;
 }
 
-/* Link Butonları İçin Ortalamayı ve Simgeyi Düzelt */
+
 .links {
     display: flex;
     flex-direction: column;
@@ -230,13 +230,13 @@ input:checked + .slider:before {
     margin-top: 20px;
 }
 
-/* LinkedIn ve GitHub Butonları İçin */
+
 .linkedin, .github {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 220px; /* Buton genişliği */
+    width: 220px; 
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -255,20 +255,20 @@ input:checked + .slider:before {
 }
 
 
-/* İkon ve Yazının Yan Yana Olmasını Sağla */
+
 .linkedin img,
 .github img {
     display: inline-block;
     vertical-align: middle;
 }
 
-/* CV ve E-Posta Butonları İçin Ortak Stil */
+
 .cv-button, .email {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 220px; /* Buton genişliği */
+    width: 220px; 
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
