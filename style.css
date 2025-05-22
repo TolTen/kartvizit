@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
-  transition: background-color 0.3s ease, color: 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  width: 100%;
   height: 100%;
 }
 
@@ -17,9 +19,7 @@ body {
   color: #1e1e1e;
   font-size: 20px;
   padding-top: 80px;
-  overflow-x: hidden;
   min-height: 100vh;
-  overscroll-behavior-y: none;
   display: flex;
   flex-direction: column;
 }
@@ -83,13 +83,8 @@ body.dark-mode .theme-label {
   html, body {
     overflow-x: hidden;
     overflow-y: auto;
-    max-width: 100vw;
-  }
-
-  body {
-    transform: scale(0.6);
-    transform-origin: top left;
-    width: 166.6667%;
+    width: 100vw;
+    transform: none;
   }
 
   .navbar {
@@ -126,26 +121,15 @@ body.dark-mode .theme-label {
     text-align: center !important;
   }
 
-  .projects-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 1rem;
-  }
-
+  .projects-grid,
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
     padding-bottom: 1rem;
   }
 
-  .project-card {
-    flex: 0 0 auto;
-    width: 280px;
-  }
-
+  .project-card,
   .skill-box {
     width: 100%;
   }
@@ -161,6 +145,7 @@ body.dark-mode .theme-label {
     gap: 1rem;
   }
 }
+
 
 /* Navbar */
 .navbar {
