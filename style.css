@@ -17,6 +17,7 @@ body {
   font-size: 20px;
   padding-top: 80px;
   overflow-x: auto;
+  overscroll-behavior-y: contain;
 }
 
 body.dark-mode {
@@ -83,6 +84,7 @@ body.dark-mode .theme-label {
     transform: scale(0.6);
     transform-origin: top left;
     width: 166.6667%;
+    overflow-y: hidden;
   }
 
   .navbar {
@@ -128,17 +130,19 @@ body.dark-mode .theme-label {
   }
 
   .skills-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding-bottom: 1rem;
   }
 
-  .project-card,
-  .skill-box {
+  .project-card {
     flex: 0 0 auto;
     width: 280px;
+  }
+
+  .skill-box {
+    width: 100%;
   }
 
   .profile-pic {
