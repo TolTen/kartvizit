@@ -95,6 +95,7 @@ body.dark-mode .theme-label {
   }
 
   .nav-links {
+    display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     white-space: nowrap;
@@ -106,11 +107,34 @@ body.dark-mode .theme-label {
   .nav-links a {
     white-space: nowrap;
     padding: 0.5rem 1rem;
+    display: inline-block;
   }
 
   .language-toggle {
     flex-shrink: 0;
     gap: 1rem;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .project-card,
+  .skill-box {
+    flex: 0 0 auto;
+    width: 280px;
   }
 
   .content-section,
@@ -119,19 +143,6 @@ body.dark-mode .theme-label {
   .project-desc,
   .section-title {
     text-align: center !important;
-  }
-
-  .projects-grid,
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .project-card,
-  .skill-box {
-    width: 100%;
   }
 
   .profile-pic {
