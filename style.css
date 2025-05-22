@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color: 0.3s ease;
   box-sizing: border-box;
 }
 
-html, body {
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  width: 100%;
   height: 100%;
 }
 
@@ -19,7 +18,9 @@ body {
   color: #1e1e1e;
   font-size: 20px;
   padding-top: 80px;
+  overflow-x: hidden;
   min-height: 100vh;
+  overscroll-behavior-y: none;
   display: flex;
   flex-direction: column;
 }
@@ -102,12 +103,14 @@ body.dark-mode .theme-label {
     gap: 1.5rem;
     margin: 0;
     padding: 0;
+    scroll-snap-type: x mandatory;
   }
 
   .nav-links a {
     white-space: nowrap;
     padding: 0.5rem 1rem;
     display: inline-block;
+    scroll-snap-align: start;
   }
 
   .language-toggle {
@@ -115,26 +118,21 @@ body.dark-mode .theme-label {
     gap: 1rem;
   }
 
-  .projects-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 1rem;
-  }
-
+  .projects-grid,
   .skills-grid {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
   }
 
   .project-card,
   .skill-box {
     flex: 0 0 auto;
     width: 280px;
+    scroll-snap-align: start;
   }
 
   .content-section,
@@ -156,7 +154,6 @@ body.dark-mode .theme-label {
     gap: 1rem;
   }
 }
-
 
 /* Navbar */
 .navbar {
@@ -203,6 +200,9 @@ section {
   padding: 0;
   margin: 1rem 0;
   justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .nav-links a {
