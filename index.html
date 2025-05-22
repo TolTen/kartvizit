@@ -1,134 +1,228 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kartvizit Sitesi</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kartvizit – Tolga Gümüşten</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="language-switch-container">
-            <span>English</span>
-            <label class="switch">
-                <input type="checkbox" id="language-toggle">
-                <span class="slider round"></span>
-            </label>
-            <span>Türkçe</span>
+  <!-- Navigasyon Menüsü -->
+  <header>
+    <nav class="navbar">
+      <a href="#hero" class="logo">Tolga Gümüşten</a>
+      <ul class="nav-links">
+        <li><a href="CV - Tolga Gümüşten.pdf" download class="lang-tr">CV</a><a href="CV - Tolga Gümüşten.pdf" download class="lang-en" style="display:none">Resume</a></li>
+        <li><a href="#about" class="lang-tr">Hakkımda</a><a href="#about" class="lang-en" style="display:none">About</a></li>
+        <li><a href="#projects" class="lang-tr">Projeler</a><a href="#projects" class="lang-en" style="display:none">Projects</a></li>
+        <li><a href="#skills" class="lang-tr">Yetenekler</a><a href="#skills" class="lang-en" style="display:none">Skills</a></li>
+        <li><a href="#contact" class="lang-tr">İletişim</a><a href="#contact" class="lang-en" style="display:none">Contact</a></li>
+      </ul>
+      <div class="language-toggle">
+        <div class="theme-toggle-wrapper">
+            <span class="theme-label">Tema</span>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Tema Değiştir">🌗</button>
         </div>
-        <img src="ben1.JPG" alt="Profil Fotoğrafı" class="profile-pic">
-        <h1 id="name">Tolga Gümüşten</h1>
-        <p id="bio">Merhaba! <br><br>
-            Siteme hoş geldiniz, ben Tolga. Hayatım boyunca hep kendimi geliştirmek ve tecrübe edinmeyi ön plana koydum. 
-            Bu konuda da hala çalışmalarım, sertifika programlarına katılımım ve seminerlere katılımım devam ediyor.
-        </p><br>
+        <label class="switch">
+          <input type="checkbox" id="language-switch" onchange="toggleLanguage()">
+          <span class="slider"></span>
+        </label>
+        <span class="language-label">TR / EN</span>
+      </div>
+    </nav>
+  </header>
 
-        <button class="more-info-button" id="more-info-button" onclick="toggleMoreInfo()">
-            <span id="toggle-icon">▶</span> Hakkımda Daha Fazla
-        </button>
-        <div id="more-info" class="more-info" style="display: none;">
-            <p>Hakkımda daha fazla ve daha detaylı bilgileri buradan görebilirsiniz ve okuyabilirsiniz.</p>
-        </div><br>
-
-        <div class="links">
-            <a href="https://www.linkedin.com/in/tolga-g%C3%BCm%C3%BC%C5%9Ften-640b2a224/" target="_blank" class="linkedin">
-                <img src="linkedin.svg" alt="LinkedIn" class="icon"> LinkedIn
-            </a>
-            <a href="https://github.com/TolTen" target="_blank" class="github">
-                <img src="github.svg" alt="GitHub" class="icon"> GitHub
-            </a>
-            <a href="#" onclick="showCV()" class="cv-button">
-                <img src="generic-blog.svg" alt="CV" class="icon"> CV
-            </a>
-            <a href="mailto:tolga.gumustenn@gmail.com" class="email">
-                <img src="32px-Gmail_icon_(2020).svg.png" alt="Gmail" class="icon"> E-Mail
-            </a>
+  <!-- Kısa Tanıtım -->
+  <section class="content-section" id="hero">
+    <img src="ben1.JPG" alt="Profil Fotoğrafı" class="profile-pic"/>
+    <div class="bio-text">
+        <div class="card-tagline">
+            Özyeğin Üniversitesi · Bilgisayar Mühendisliği · 3. Sınıf
         </div>
+
+      <p class="lang-tr">
+        Siteme hoş geldiniz, ben Tolga. Hayatım boyunca hep kendimi geliştirmek ve tecrübe edinmeyi ön plana koydum. 
+        Bu konuda da hala çalışmalarım, sertifika programlarına katılımım ve seminerlere katılımım devam ediyor.
+      </p>
+      <p class="lang-en" style="display:none">
+        Welcome to my website, I'm Tolga. Throughout my life, I’ve always prioritized self-improvement and gaining experience. 
+        I continue to participate in training programs, certifications, and seminars to grow in this journey.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hakkımda -->
+  <section class="content-section" id="about">
+    <h2 class="section-title">
+      <span class="lang-tr">Hakkımda</span>
+      <span class="lang-en" style="display:none">About Me</span>
+    </h2>
+    <p class="about-text lang-tr">26 Aralık 2003 tarihinde Almanya'nın Stuttgart şehrinde doğdum. Yaklaşık 2,5 yıl orada yaşadıktan sonra ailemle birlikte İstanbul, Türkiye'ye taşındık ve o zamandan beri İstanbul'da yaşamaktayım.<br><br>
+      İlkokul ve ortaokul eğitimimi Denizatı Okulları'nda tamamladım ve lise eğitimime de aynı okulda, Denizatı Anadolu Lisesi'nde devam ettim. Eğitim hayatım boyunca okulun sunduğu imkanlardan en iyi şekilde faydalanmaya çalıştım. Ortaokul dönemimde, okulun sağladığı yurtdışı eğitim programları kapsamında 6. ve 7. sınıfta bir haftalığına Almanya'da dil okuluna gittim. Lise yıllarımda da benzer deneyimler yaşadım. 9. sınıfta İsviçre'ye giderek CERN laboratuvarlarını rehber eşliğinde gezme ve bilimsel araştırmaları yakından gözlemleme fırsatı buldum. 9. sınıfın sonunda Cambridge, İngiltere'de üç haftalık bir dil okuluna katılarak yerel bir ailenin yanında yaşadım ve İngilizce becerilerimi geliştirme imkanı elde ettim. 10. sınıfın sonunda Augsburg, Almanya'da üç hafta boyunca bir Alman ailenin yanında kalarak Almanca bilgimi ilerlettim ve dil okuluna devam ettim. 11. sınıfta ise pandemi nedeniyle planlanan yurtdışı dil okulu programımız maalesef ki düzenlenemedi.<br><br>
+      Lise döneminde GÖK (Görünenin Ötesini Keşfet) projesine dahil oldum. Bu proje, kariyer sahibi konuşmacıları dinleyicilerle buluşturan ve farklı bakış açıları kazandırmayı amaçlayan bir etkinliktir. 10. sınıfta projede üye olarak yer alırken, 11. sınıfta yönetim kuruluna katılarak konuşmacılarla iletişim kurma ve etkinlik süresince organizasyonu yönetme görevlerini üstlendim.<br><br>
+      2021 yılında %50 burs ile Özyeğin Üniversitesi Bilgisayar Mühendisliği bölümüne başladım. İngilizcemi geliştirmek ve kulüp aktivitelerine daha fazla katılmak için B1 kurundan başladım.<br><br>
+      Üniversite hayatım boyunca çeşitli kulüplere katılarak kendimi geliştirmeye çalıştım. Bunlardan biri olan ÖZÜ ODA Tiyatrosu'na katılarak 2022-2025 yılları arasında her ay sahne aldım. Ayrıca, Toplumsal Çatı Kulübü'nde aktif bir rol aldım. Bu kulüp, sosyal sorumluluk ve yardım, farkındalık ve akademik gelişim olmak üzere üç alanda faaliyet göstermektedir. Sosyal sorumluluk alanında barınaklara mama bağışı, yardıma muhtaç çocuklara kıyafet desteği ve "Çorbada Tuzun Olsun" derneğinde gönüllülük gibi projeler gerçekleştirdik. Farkındalık konusunda çeşitli seminerler ve atölyeler düzenleyerek toplumsal konulara dikkat çektik. Akademik alanda ise Etik Liderler Akademisi (ELA) gibi programlara ev sahipliği yaparak öğrencilere liderlik ve etik bilinci kazandırdık. Kulübe 2022 yılında üye olarak katıldım, 2022-2023 döneminde alt kurul üyesi, 2023-2024 döneminde denetim kurulu üyesi, 2024-2025 döneminde ise başkan olarak görev almaktayım.<br><br>
+      Kazandığım sertifikalar arasında OpenFAB Teknoloji Merkezi'nde MAKErobot ve MAKEngineer sertifika programlarını tamamladım. Bu sertifika programlarıyla birlikte Arduino, lehimleme, devre kartı tasarımı ve mobil uygulama geliştirme gibi teknik konularda deneyim kazandım. Bunların haricinde Etik Liderler Akademisi'ne (ELA) katılarak iş etiği ve liderlik alanında eğitimler aldım. Ardından Baltaş Grubu'nun "Problem Çözme ve Karar Verme" sertifika programına katılarak problem analizi, problem çözme ve karar verme becerilerimi geliştirdim.<br><br>
+      Kendimi öğrenmeye aç, yeniliklere açık, sosyalleşmeyi seven, çalışkan ve kararlı biri olarak tanımlıyorum. Kazandığım deneyimlerin ve öğrendiklerimin üzerine yenilerini eklemek için heyecan duyuyorum. Yeni fırsatlar keşfetmeye ve kendimi geliştirmeye devam edeceğim.</p>
+
+    <p class="about-text lang-en" style="display:none">I was born on December 26, 2003, in Stuttgart, Germany. After living there for about 2.5 years, I moved to Istanbul, Turkey, with my family and have been living there ever since.<br><br>
+      I completed my primary and secondary education at Denizatı Schools and continued my high school education at the same institution, Denizatı Anatolian High School. Throughout my education, I tried to make the most of the opportunities provided by the school. During middle school, I attended a one-week language school in Germany in the 6th and 7th grades through the school's international programs. In high school, I had similar experiences. In the 9th grade, I visited CERN laboratories in Switzerland with a guide and had the opportunity to observe scientific research closely. At the end of 9th grade, I attended a three-week language school in Cambridge, England, lived with a local family, and improved my English. At the end of 10th grade, I stayed with a German family in Augsburg, Germany, for three weeks and continued my language school. Unfortunately, the international language school planned for 11th grade could not be held due to the pandemic.<br><br>
+      During high school, I joined the GÖK (Discover Beyond the Visible) project. This project aims to bring professionals together with audiences and offer different perspectives. In 10th grade, I participated as a member, and in 11th grade, I joined the executive board, taking on responsibilities such as contacting speakers and managing event organization.<br><br>
+      In 2021, I started studying Computer Engineering at Özyeğin University with a 50% scholarship. I started from the B1 level to improve my English and participate more in club activities.<br><br>
+      During university, I joined various clubs to improve myself. One of them was ÖZÜ ODA Theater, where I performed monthly from 2022 to 2025. I also took an active role in the Toplumsal Çatı Club, which operates in three areas: social responsibility and aid, awareness, and academic development. In the area of social responsibility, we organized food donations to shelters, clothing support for children in need, and volunteer activities with the “Çorbada Tuzun Olsun” association. In awareness, we held seminars and workshops on social issues. Academically, we hosted programs like the Ethical Leaders Academy (ELA), helping students gain leadership and ethical awareness. I joined the club in 2022 as a member, became a subcommittee member in 2022–2023, a supervisory board member in 2023–2024, and I currently serve as president for 2024–2025.<br><br>
+      Among the certificates I have earned are the MAKErobot and MAKEngineer certification programs from OpenFAB Technology Center. Through these programs, I gained experience in Arduino, soldering, circuit board design, and mobile app development. Additionally, I participated in the Ethical Leaders Academy (ELA), receiving training in business ethics and leadership. Later, I attended Baltaş Group’s “Problem Solving and Decision Making” certificate program, improving my skills in problem analysis, solving, and decision-making.<br><br>
+      I describe myself as eager to learn, open to innovation, sociable, hardworking, and determined. I am excited to add new experiences and knowledge to what I have already learned. I will continue discovering new opportunities and improving myself.</p>
+
+  </section>
+
+  <!-- Projeler -->
+  <section id="projects" class="content-section projects-section">
+    <h2 class="section-title">
+        <span class="lang-tr">Projeler</span>
+        <span class="lang-en" style="display:none">Projects</span>
+    </h2>
+
+    <div style="text-align:center; margin-bottom: 1rem;">
+        <a href="https://github.com/tolga-gumusten" target="_blank">
+            <img src="github.svg" alt="GitHub" class="github-icon" />
+        </a>
+        <p class="github-note lang-tr">Diğer projelerime GitHub hesabım üzerinden ulaşabilirsiniz.</p>
+        <p class="github-note lang-en" style="display:none">You can access my other projects via my GitHub profile.</p>
     </div>
 
-    <script>
-        function showCV() {
-            let cvWindow = window.open("CV - Tolga Gümüşten.pdf", "_blank");
-        }
 
-        function toggleMoreInfo() {
-            let infoSection = document.getElementById("more-info");
-            let toggleIcon = document.getElementById("toggle-icon");
-            if (infoSection.style.display === "none" || infoSection.style.display === "") {
-                infoSection.style.display = "block";
-                toggleIcon.textContent = "▼";
-            } else {
-                infoSection.style.display = "none";
-                toggleIcon.textContent = "▶";
-            }   
-        }
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3 class="project-title">MAKEngineer</h3>
+        <p class="project-desc lang-tr">
+          OpenFAB Teknoloji Merkezi’nde tamamladığım mühendislik odaklı bir sertifika programı...
+        </p>
+        <p class="project-desc lang-en" style="display:none">
+          An engineering-focused certification program I completed at OpenFAB...
+        </p>
+      </div>
 
-        document.addEventListener("DOMContentLoaded", function () { 
-    let languageToggle = document.getElementById("language-toggle");
+      <div class="project-card">
+        <h3 class="project-title">MAKErobot</h3>
+        <p class="project-desc lang-tr">
+          Robotik temelli teknik beceriler kazandıran bir OpenFAB programı...
+        </p>
+        <p class="project-desc lang-en" style="display:none">
+          A robotics-based technical program at OpenFAB...
+        </p>
+      </div>
+    </div>
+  </section>
 
-    // Sayfa açıldığında Türkçe olarak başlat (slider sağda olmalı)
-    languageToggle.checked = true; 
-    toggleLanguage(); 
+    <!-- Yetenekler -->
+  <section id="skills" class="content-section">
+    <h2 class="section-title">
+      <span class="lang-tr">Yetenekler</span>
+      <span class="lang-en" style="display:none">Skills</span>
+    </h2>
+    <div class="skills-grid">
+      <div class="skill-box"><span class="lang-tr">İletişim Becerisi</span><span class="lang-en" style="display:none">Communication Skills</span></div>
+      <div class="skill-box"><span class="lang-tr">HTML</span><span class="lang-en" style="display:none">HTML</span></div>
+      <div class="skill-box"><span class="lang-tr">CSS</span><span class="lang-en" style="display:none">CSS</span></div>
+      <div class="skill-box"><span class="lang-tr">JavaScript</span><span class="lang-en" style="display:none">JavaScript</span></div>
+      <div class="skill-box"><span class="lang-tr">React</span><span class="lang-en" style="display:none">React</span></div>
+      <div class="skill-box"><span class="lang-tr">Java</span><span class="lang-en" style="display:none">Java</span></div>
+      <div class="skill-box"><span class="lang-tr">Problem Çözme</span><span class="lang-en" style="display:none">Problem Solving</span></div>
+      <div class="skill-box"><span class="lang-tr">Liderlik</span><span class="lang-en" style="display:none">Leadership</span></div>
+    </div>
+  </section>
 
-    languageToggle.addEventListener("change", toggleLanguage);
-});
+  
+  <!-- İletişim -->
+  <section id="contact" class="content-section">
+  <h2 class="section-title">
+    <span class="lang-tr">İletişim</span>
+    <span class="lang-en" style="display:none">Contact</span>
+  </h2>
+  <div class="contact-info">
+    <p>
+      <a href="https://www.linkedin.com/in/tolga-g%C3%BCm%C3%BC%C5%9Ften-640b2a224/" target="_blank" class="linkedin">
+        <img src="linkedin.svg" class="linkedin-icon" alt="LinkedIn" /> LinkedIn
+      </a>
 
-function toggleLanguage() {
-    let isChecked = document.getElementById("language-toggle").checked;
-    
-    let nameElement = document.getElementById("name");
-    let bioElement = document.getElementById("bio");
-    let moreInfoButton = document.getElementById("more-info-button");
-    let moreInfoText = document.getElementById("more-info");
+    </p>
+    <p>
+      <a href="mailto:tolga.gumustenn@gmail.com" class="email">
+        <img src="32px-Gmail_icon_(2020).svg.png" class="icon" alt="Gmail" /> tolga.gumustenn@gmail.com
+      </a>
+    </p>
+  </div>
+</section>
 
-    if (!nameElement || !bioElement || !moreInfoButton || !moreInfoText) {
-        console.error("Bir öğe bulunamadı! ID’leri tekrar kontrol edin.");
-        return;
+
+
+
+  <script>
+    function toggleLanguage() {
+      const isEnglish = document.getElementById("language-switch").checked;
+      document.querySelectorAll(".lang-tr").forEach(el => el.style.display = isEnglish ? "none" : "");
+      document.querySelectorAll(".lang-en").forEach(el => el.style.display = isEnglish ? "" : "none");
     }
+  </script>
 
-    // Eğer checkbox işaretliyse (sağda, Türkçe), Türkçe göster
-    // Checkbox işaretli değilse (solda, İngilizce), İngilizce göster
-    if (isChecked) {
-        nameElement.textContent = "Tolga Gümüşten";
-        bioElement.innerHTML = "Merhaba!<br><br> Siteme hoş geldiniz, ben Tolga. Hayatım boyunca hep kendimi geliştirmek ve tecrübe edinmeyi ön plana koydum. <br><br> Bu konuda da hala çalışmalarım, sertifika programlarına katılımım ve seminerlere katılımım devam ediyor.";
-        moreInfoButton.innerHTML = "▶ Hakkımda Daha Fazla";
-        moreInfoText.innerHTML = `
-                    26 Aralık 2003 tarihinde Almanya'nın Stuttgart şehrinde doğdum. Yaklaşık 2,5 yıl orada yaşadıktan sonra ailemle birlikte İstanbul, Türkiye'ye taşındık ve o zamandan beri İstanbul'da yaşamaktayım.
-                    <br><br>
-                    İlkokul ve ortaokul eğitimimi Denizatı Okulları'nda tamamladım ve lise eğitimime de aynı okulda, Denizatı Anadolu Lisesi'nde devam ettim. Eğitim hayatım boyunca okulun sunduğu imkanlardan en iyi şekilde faydalanmaya çalıştım. Ortaokul dönemimde, okulun sağladığı yurtdışı eğitim programları kapsamında 6. ve 7. sınıfta bir haftalığına Almanya'da dil okuluna gittim. Lise yıllarımda da benzer deneyimler yaşadım. 9. sınıfta İsviçre'ye giderek CERN laboratuvarlarını rehber eşliğinde gezme ve bilimsel araştırmaları yakından gözlemleme fırsatı buldum. 9. sınıfın sonunda Cambridge, İngiltere'de üç haftalık bir dil okuluna katılarak yerel bir ailenin yanında yaşadım ve İngilizce becerilerimi geliştirme imkanı elde ettim. 10. sınıfın sonunda Augsburg, Almanya'da üç hafta boyunca bir Alman ailenin yanında kalarak Almanca bilgimi ilerlettim ve dil okuluna devam ettim. 11. sınıfta ise pandemi nedeniyle planlanan yurtdışı dil okulu programımız maalesef ki düzenlenemedi.
-                    <br><br>
-                    Lise döneminde GÖK (Görünenin Ötesini Keşfet) projesine dahil oldum. Bu proje, kariyer sahibi konuşmacıları dinleyicilerle buluşturan ve farklı bakış açıları kazandırmayı amaçlayan bir etkinliktir. 10. sınıfta projede üye olarak yer alırken, 11. sınıfta yönetim kuruluna katılarak konuşmacılarla iletişim kurma ve etkinlik süresince organizasyonu yönetme görevlerini üstlendim.
-                    <br><br>
-                    2021 yılında %50 burs ile Özyeğin Üniversitesi Bilgisayar Mühendisliği bölümüne başladım. İngilizcemi geliştirmek ve kulüp aktivitelerine daha fazla katılmak için B1 kurundan başladım.
-                    <br><br>
-                    Üniversite hayatım boyunca çeşitli kulüplere katılarak kendimi geliştirmeye çalıştım. Bunlardan biri olan ÖZÜ ODA Tiyatrosu'na katılarak 2022-2025 yılları arasında her ay sahne aldım. Ayrıca, Toplumsal Çatı Kulübü'nde aktif bir rol aldım. Bu kulüp, sosyal sorumluluk ve yardım, farkındalık ve akademik gelişim olmak üzere üç alanda faaliyet göstermektedir. Sosyal sorumluluk alanında barınaklara mama bağışı, yardıma muhtaç çocuklara kıyafet desteği ve "Çorbada Tuzun Olsun" derneğinde gönüllülük gibi projeler gerçekleştirdik. Farkındalık konusunda çeşitli seminerler ve atölyeler düzenleyerek toplumsal konulara dikkat çektik. Akademik alanda ise Etik Liderler Akademisi (ELA) gibi programlara ev sahipliği yaparak öğrencilere liderlik ve etik bilinci kazandırdık. Kulübe 2022 yılında üye olarak katıldım, 2022-2023 döneminde alt kurul üyesi, 2023-2024 döneminde denetim kurulu üyesi, 2024-2025 döneminde ise başkan olarak görev almaktayım.
-                    <br><br>
-                    Kazandığım sertifikalar arasında OpenFAB Teknoloji Merkezi'nde MAKErobot ve MAKEngineer sertifika programlarını tamamladım. Bu sertifika programlarıyla birlikte Arduino, lehimleme, devre kartı tasarımı ve mobil uygulama geliştirme gibi teknik konularda deneyim kazandım. Bunların haricinde Etik Liderler Akademisi'ne (ELA) katılarak iş etiği ve liderlik alanında eğitimler aldım. Ardından Baltaş Grubu'nun "Problem Çözme ve Karar Verme" sertifika programına katılarak problem analizi, problem çözme ve karar verme becerilerimi geliştirdim.
-                    <br><br>
-                    Kendimi öğrenmeye aç, yeniliklere açık, sosyalleşmeyi seven, çalışkan ve kararlı biri olarak tanımlıyorum. Kazandığım deneyimlerin ve öğrendiklerimin üzerine yenilerini eklemek için heyecan duyuyorum. Yeni fırsatlar keşfetmeye ve kendimi geliştirmeye devam edeceğim.
-                `;
+  <script>
+  let lastScrollTop = 0;
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      navbar.classList.add('hide-navbar');
     } else {
-        nameElement.textContent = "Tolga Gümüşten";
-        bioElement.innerHTML = "Hello!<br><br> Welcome to my site, I'm Tolga. Throughout my life, I have always prioritized improving myself and gaining experience. <br><br> I am still continuing my work in this regard, participating in certification programs and attending seminars.";
-        moreInfoButton.innerHTML = "▶ More About Me";
-        moreInfoText.innerHTML = `
-                    I was born on December 26, 2003, in Stuttgart, Germany. After living there for about 2.5 years, my family and I moved to Istanbul, Turkey, where I have been living ever since.
-                    <br><br>
-                    I completed my primary and middle school education at Denizatı Schools and continued my high school education at Denizatı Anatolian High School. Throughout my education, I aimed to make the best use of the opportunities provided by my school. During middle school, as part of the school's international education programs, I attended a language school in Germany for a week in both 6th and 7th grade. I had similar experiences during high school as well. In 9th grade, I traveled to Switzerland, where I had the opportunity to visit CERN laboratories with a guide and closely observe scientific research. At the end of 9th grade, I participated in a three-week language school program in Cambridge, England, where I stayed with a local family and improved my English skills. At the end of 10th grade, I stayed with a German family for three weeks in Augsburg, Germany, further enhancing my German language skills while continuing my language studies. Unfortunately, due to the pandemic, the international language school program planned for 11th grade could not take place.
-                    <br><br>
-                    During high school, I joined the GÖK (Discover Beyond the Visible) project. This initiative aimed to bring together career professionals with an audience to provide different perspectives. In 10th grade, I participated as a member, and in 11th grade, I became part of the management board, where I was responsible for contacting speakers and managing event logistics.
-                    <br><br>
-                    In 2021, I started my undergraduate studies in Computer Engineering at Özyeğin University with a 50% scholarship. To improve my English and engage more in club activities, I began my English courses at the B1 level.
-                    <br><br>
-                    Throughout my university life, I have actively participated in various clubs to further develop myself. One of these is ÖZÜ ODA Theatre, where I performed on stage every month from 2022 to 2025. Additionally, I took an active role in the Toplumsal Çatı Club, which operates in three main areas: social responsibility and aid, awareness, and academic development. In the social responsibility field, we carried out projects such as donating pet food to shelters, providing clothing support for children in need, and volunteering with the "Çorbada Tuzun Olsun" association. In the awareness domain, we organized various seminars and workshops to draw attention to social issues. On the academic side, we hosted programs like the Ethical Leaders Academy (ELA) to equip students with leadership and ethical awareness. I joined the club as a member in 2022, became a subcommittee member in the 2022-2023 term, served on the supervisory board in the 2023-2024 term, and currently serve as the club president for the 2024-2025 term.
-                    <br><br>
-                    Among the certifications I have earned, I completed the MAKErobot and MAKEngineer certification programs at OpenFAB Technology Center. Through these programs, I gained experience in Arduino, soldering, circuit board design, and mobile application development. Additionally, I participated in the Ethical Leaders Academy (ELA), where I received training on business ethics and leadership. Following this, I attended Baltaş Group’s "Problem Solving and Decision Making" certification program, which helped me develop skills in problem analysis, decision-making, and critical thinking.
-                    <br><br>
-                    I consider myself a curious learner, open to innovation, highly sociable, hardworking, and determined. I am excited to continue building on my experiences and knowledge, eager to explore new opportunities and further improve myself.
-                `;
+      navbar.classList.remove('hide-navbar');
     }
-}
 
-    </script>
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
+  });
+</script>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="mailto:tolga.gumustenn@gmail.com">
+      <img src="32px-Gmail_icon_(2020).svg.png" class="footer-icon" alt="Email" />
+      tolga.gumustenn@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/tolga-g%C3%BCm%C3%BC%C5%9Ften-640b2a224/" target="_blank">
+      <img src="linkedin.svg" class="footer-icon" alt="LinkedIn" />
+      LinkedIn
+    </a>
+    <a href="https://github.com/TolTen" target="_blank">
+      <img src="github.svg" class="footer-icon" alt="GitHub" />
+      GitHub
+    </a>
+  </div>
+</footer>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const themeToggle = document.getElementById("theme-toggle");
+
+    
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+
+    
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark-mode") ? "dark" : "light"
+      );
+    });
+  });
+</script>
 </body>
 </html>
