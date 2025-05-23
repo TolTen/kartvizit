@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
-  transition: background-color 0.3s ease, color: 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   box-sizing: border-box;
 }
 
@@ -85,12 +85,13 @@ body.dark-mode .theme-label {
     overflow-x: hidden;
     overflow-y: auto;
     width: 100vw;
-    transform: none;
   }
 
   .navbar {
+    display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     align-items: center;
     padding: 1rem;
   }
@@ -106,11 +107,17 @@ body.dark-mode .theme-label {
     scroll-snap-type: x mandatory;
   }
 
+  .nav-links li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
   .nav-links a {
     white-space: nowrap;
     padding: 0.5rem 1rem;
     display: inline-block;
     scroll-snap-align: start;
+    color: #ffffff;
   }
 
   .language-toggle {
@@ -118,21 +125,36 @@ body.dark-mode .theme-label {
     gap: 1rem;
   }
 
-  .projects-grid,
-  .skills-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 1rem;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
+  .projects-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    overflow-x: auto !important;
+    gap: 1rem !important;
+    padding: 1rem 0 !important;
+    scroll-snap-type: x mandatory !important;
+    max-height: 600px;
   }
 
-  .project-card,
+  .project-card {
+    flex: 0 0 auto !important;
+    width: 280px !important;
+    scroll-snap-align: start !important;
+  }
+
+  .skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    overflow-x: auto !important;
+    gap: 1rem !important;
+    padding: 1rem 0 !important;
+    scroll-snap-type: x mandatory !important;
+    max-height: 340px;
+  }
+
   .skill-box {
-    flex: 0 0 auto;
-    width: 280px;
-    scroll-snap-align: start;
+    flex: 0 0 auto !important;
+    width: 95% !important;
+    scroll-snap-align: start !important;
   }
 
   .content-section,
